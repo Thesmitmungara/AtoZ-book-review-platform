@@ -1,7 +1,10 @@
 # Python
 backend/venv/
 backend/__pycache__/
+backend/routes/__pycache__/
+backend/instance/
 backend/*.sqlite3
+backend/.env
 
 # Node
 frontend/node_modules/
@@ -9,3 +12,7 @@ frontend/.env
 
 # Logs
 *.log
+
+# System files
+.DS_Store
+Thumbs.db
