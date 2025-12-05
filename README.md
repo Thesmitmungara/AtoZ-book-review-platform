@@ -1,61 +1,55 @@
-Book Review Platform
+# 📚 Book Review Platform
 
-A full-stack web application that allows users to browse books, write reviews, and manage authentication using JWT.
-The frontend is built using React, and the backend is built using Flask.
+A full-stack web application for browsing books, writing reviews, and managing authentication using JWT.  
+Built with **React**, **Flask**, and **SQLAlchemy**.
 
-Features
-User Features
+---
 
-Register and log in securely
+## ✨ Features
 
-Browse all books
+### 👤 User Features
+- Register and log in securely  
+- Browse list of books  
+- View detailed book pages  
+- Add reviews & ratings  
+- Edit and delete own reviews  
 
-View book details and reviews
+### 🛠️ Admin Features
+- Add new books  
+- Update book details  
+- Delete books  
+- Manage catalog  
 
-Add, edit, and delete your reviews
+### 🔐 Security
+- Password hashing  
+- JWT authentication  
+- Protected routes  
+- Admin-only access controls  
 
-Rate books
+---
 
-Admin Features
+## 🧱 Tech Stack
 
-Add new books
+### 🎨 Frontend
+- React  
+- React Router  
+- Axios  
+- Bootstrap  
 
-Update existing books
+### ⚙️ Backend
+- Flask  
+- SQLAlchemy ORM  
+- PyJWT  
 
-Delete books
+### 🗄 Database
+- SQLite (development)  
+- Extendable to PostgreSQL / MySQL  
 
-Security
+---
 
-JWT authentication
+## 📁 Project Structure
 
-Password hashing
-
-Role-based access for admin
-
-Tech Stack
-Frontend
-
-React
-
-React Router
-
-Axios
-
-Bootstrap
-
-Backend
-
-Flask
-
-SQLAlchemy
-
-PyJWT
-
-Database
-
-SQLite (development)
-
-Project Structure
+```
 AtoZ-book-review-platform/
 │
 ├── backend/
@@ -91,83 +85,109 @@ AtoZ-book-review-platform/
             ├── BookList.js
             ├── BookDetail.js
             └── AdminDashboard.js
+```
 
-API Endpoints
-Authentication
-Method	Endpoint	Description
-POST	/api/auth/register	Register a new user
-POST	/api/auth/login	Login and receive JWT token
-Books
-Method	Endpoint	Description
-GET	/api/books	Get list of all books
-POST	/api/books	Create a new book (Admin only)
-GET	/api/books/<id>	Get details of a single book
-PUT	/api/books/<id>	Update book details (Admin only)
-DELETE	/api/books/<id>	Delete a book (Admin only)
-Reviews
-Method	Endpoint	Description
-POST	/api/reviews/<book_id>	Add a review to a book
-PUT	/api/reviews/<review_id>	Edit a review (owner only)
-DELETE	/api/reviews/<review_id>	Delete a review (owner or admin)
-Backend Setup
+---
+
+# 🔗 API Endpoints
+
+## 🔐 Authentication
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/auth/register` | Register new user |
+| POST | `/api/auth/login` | Login and receive JWT token |
+
+---
+
+## 📚 Books
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/books` | Get all books |
+| POST | `/api/books` | Add new book (Admin only) |
+| GET | `/api/books/<id>` | Get book details |
+| PUT | `/api/books/<id>` | Update book (Admin only) |
+| DELETE | `/api/books/<id>` | Delete book (Admin only) |
+
+---
+
+## ⭐ Reviews
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/reviews/<book_id>` | Add a review |
+| PUT | `/api/reviews/<review_id>` | Edit a review |
+| DELETE | `/api/reviews/<review_id>` | Delete a review |
+
+---
+
+# 🖥️ Backend Setup
+
+```
 cd backend
 python -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt
+```
 
+Create `.env`:
 
-Create .env:
-
+```
 SECRET_KEY=your_secret_key
 JWT_SECRET=your_jwt_secret
 DATABASE_URL=sqlite:///db.sqlite3
 JWT_EXP=3600
+```
 
+Initialize database:
 
-Initialize the database:
-
+```
 python seed.py
-
+```
 
 Run backend:
 
+```
 python app.py
+```
 
+Backend runs at:  
+👉 http://localhost:5000
 
-Backend will run at:
-http://localhost:5000
+---
 
-Frontend Setup
+# 🎨 Frontend Setup
+
+```
 cd frontend
 npm install
+```
 
+Create `.env`:
 
-Create .env:
-
+```
 REACT_APP_API_URL=http://localhost:5000/api
+```
 
+Run frontend:
 
-Run React app:
-
+```
 npm start
+```
 
+Frontend runs at:  
+👉 http://localhost:3000
 
-Frontend will run at:
-http://localhost:3000
+---
 
-Future Enhancements
+## 🚀 Future Enhancements
+- Image upload for book covers  
+- Search + filter functionality  
+- User profile page  
+- Deployment (Render + Vercel)  
+- Review likes / helpful votes  
 
-Add book cover image upload
+---
 
-Add search & category filtering
-
-Add user profile page
-
-Deploy backend (Render / Railway)
-
-Deploy frontend (Vercel / Netlify)
-
-Author
-
-Smit Patel
+## 👨‍💻 Author
+**Smit Patel**  
 GitHub: https://github.com/Thesmitmungara
+
